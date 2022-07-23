@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <script>
+            function task1() {
+
+                const input = "Smart people learn from everything and everyone, average people from their experience, stupid people already, have all the answers";
+                const str_split= input.split(" ");
+                const word_arr =[];
+                for(let i=0; i<str_split.length; i++){
+                    word_arr[i] = str_split[i].length;
+                    console.log('word length', word_arr[i]);
+                }
+                const max = Math.max(...word_arr);
+                const index = word_arr.indexOf(max);
+                console.log("max index",index);
+
+                for (let j=0; j<str_split.length; j++){
+                    if(index === j){
+                        console.log('longest word is', str_split[j]);
+                        document.getElementById('output').innerHTML=str_split[j];
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div>
+            <p>Smart people learn from everything and everyone, average people from their experience, stupid people already, have all the answers</p>
+            <div>
+                <button onclick="task1();">output</button>
+
+                <p id="output"></p>
+            </div>
+        </div>
+    </body>
+</html>
